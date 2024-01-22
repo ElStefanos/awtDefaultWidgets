@@ -1,22 +1,19 @@
 <?php
 $widget = new awtWidgets();
 ?>
-
 <div class="notification-widget shadow">
     <h3>Notifications</h3>
     <div class="wrapper">
         <?php echo $notifications = $widget->notificationWidget(10) ?>
     </div>
 </div>
-
 <style>
-
     .notification-widget {
-        width: 330px;
         height: 360px;
-        border-radius: 10px;
+        border-radius: 5px;
         padding: 10px;
         overflow-y: auto;
+        background: #fff;
     }
 
     .notification-widget .wrapper {
@@ -56,5 +53,4 @@ $widget = new awtWidgets();
         background-color: red;
         color: #fff;
     }
-
 </style>

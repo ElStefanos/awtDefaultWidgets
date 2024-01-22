@@ -11,118 +11,64 @@ $location = HOSTNAME . 'awt-content/plugins/awtDashboardWidgets/data/icons/';
 
 
 <div class="awt-widget-group">
-    <div class="incidents-widget shadow">
+    <div class="incidents-widget shadow widget">
         <div class="wrapper">
             <h3>Incidents</h3>
             <img src="<?php echo $location . "triangle-exclamation-solid.svg"; ?>">
         </div>
         <p><?php echo $incidentsCount; ?></p>
     </div>
-    <div class="notices-widget shadow">
+    <div class="notices-widget shadow widget">
         <div class="wrapper">
             <h3>Notices</h3>
             <img src="<?php echo $location . "flag-regular.svg"; ?>">
         </div>
         <p><?php echo $noticeCount; ?></p>
     </div>
-    <div class="plugins-widget shadow">
+    <div class="plugins-widget shadow widget">
         <h3>Active plugins</h3>
         <p><?php echo $plugins = $widget->pluginStatsWidget() ?></p>
     </div>
-    <div class="theme-widget shadow">
+    <div class="theme-widget shadow widget">
         <h3>Active Theme</h3>
         <p><?php echo $theme["name"] ?></p>
     </div>
+
 </div>
-<style>
+<style scoped>
 
     .awt-widget-group {
         display: flex;
         flex-wrap: wrap;
-        width: 350px;
-        gap: 10px;
+        height: fit-content;
+        gap: 30px;
+        justify-content: space-between;
     }
 
-    .incidents-widget {
-        background-color: red;
-        height: 150px;
+    .widget {
         width: 150px;
+        height: 150px;
+        border-radius: 5px;
         padding: 10px;
-        border-radius: 10px;
-        color: #fff;
+        background: #fff;
     }
 
-    .incidents-widget .wrapper {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
+    .widget .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
         align-items: center;
+        justify-content: start;
         gap: 20px;
+        width: 100%;
     }
 
-    .incidents-widget .wrapper img {
+    .widget .wrapper img {
+        width: 30px;
         height: 30px;
-        filter: var(--icon-filter);
     }
 
-    .incidents-widget p {
-        font-size: 25px;
-        font-weight: 600;
-    }
+    
 
-    .notices-widget {
-        background-color: orange;
-        height: 150px;
-        width: 150px;
-        padding: 10px;
-        border-radius: 10px;
-        color: #fff;
-    }
-
-    .notices-widget .wrapper {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .notices-widget .wrapper img {
-        height: 30px;
-        filter: var(--icon-filter);
-    }
-
-    .notices-widget p {
-        font-size: 25px;
-        font-weight: 600;
-    }
-
-    .plugins-widget {
-        background-color: cornflowerblue;
-        color: #fff;
-        height: 150px;
-        width: 150px;
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .plugins-widget p{
-        font-weight: 600;
-        font-size: 25px;
-    }
-
-    .theme-widget {
-        background-color: lightsalmon;
-        color: #fff;
-        height: 150px;
-        width: 150px;
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .theme-widget p{
-        font-weight: 600;
-        font-size: 20px;
-    }
 
 </style>

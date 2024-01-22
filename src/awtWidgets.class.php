@@ -4,7 +4,7 @@ use notifications\notifications;
 use admin\authentication;
 use paging\paging;
 use themes\themes;
-
+use settings\siteHealth;
 
 class awtWidgets  {
 
@@ -66,6 +66,13 @@ class awtWidgets  {
         }
 
         return $pageList;
+
+    }
+
+    public function getSiteHealth() {
+
+        $health = new siteHealth();
+        return $health->getHealth();
 
     }
 
